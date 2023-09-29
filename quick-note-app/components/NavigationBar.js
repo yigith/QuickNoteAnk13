@@ -1,9 +1,14 @@
-import { Container, Navbar } from "react-bootstrap";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button, Container, Navbar } from "react-bootstrap";
 
-export default function NavigationBar() {
+export default function NavigationBar({ onBarsClick }) {
     return (
         <Navbar className="bg-body-tertiary">
-            <Container>
+            <Container className="justify-content-start">
+                <Button variant="dark" className="me-2 d-sm-none" onClick={onBarsClick}>
+                    <FontAwesomeIcon icon={faBars} />
+                </Button>
                 <Navbar.Brand href="/">
                     <img
                         alt=""
